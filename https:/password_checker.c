@@ -5,7 +5,7 @@ void checkPassword(char p[])
     int i, len = 0;
     int upper = 0, lower = 0, digit = 0, special = 0;
 
-    // Added '&& p[i] != '\n'' so the loop ignores the Enter key safely
+
     for(i = 0; p[i] != '\0' && p[i] != '\n'; i++)
     {
         len++;
