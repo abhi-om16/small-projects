@@ -6,9 +6,9 @@ int main() {
     scanf("%d", &n);
     
     int books[n];
-    printf("Enter %d sorted books: \n", n); // Fixed: Added 'n' here
+    printf("Enter %d sorted books: \n", n);
     
-    for(int i = 0; i < n; i++){ // Fixed: Used ';' and changed '<=' to '<'
+    for(int i = 0; i < n; i++){ 
         scanf("%d", &books[i]);
     }
     
@@ -22,24 +22,24 @@ int main() {
     while(low <= high){
         int mid = (low + high) / 2;
         
-        if(books[mid] == key){ // Fixed: Array name 'books' and used '=='
+        if(books[mid] == key){ 
             found = mid;
-            break; // Fixed: Added break to exit loop when found
+            break; 
         }
         else if(books[mid] < key){
-            low = mid + 1; // Fixed: Update 'low', not 'mid'
+            low = mid + 1; 
         }
         else{
-            high = mid - 1; // Fixed: Update 'high', not 'mid'
+            high = mid - 1; 
         }
-    } // Fixed: Added missing closing brace for the while loop
+    } 
 
     printf("--------Result---------\n");
     if(found != -1){
-        printf("Book found at position %d\n", found + 1); // Fixed typo 'postion'
+        printf("Book found at position %d\n", found + 1);
     }
     else{
-        printf("Book does not exist!\n"); // Fixed typo 'exit'
+        printf("Book does not exist!\n"); 
     }
     
     return 0;
