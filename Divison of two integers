@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int divisor,dividend,sum=0,quotient=0;
+    cin >> dividend;
+    cin >> divisor;
+    if(dividend > 0 && divisor > 0){
+    while (sum + divisor <= dividend){
+        sum += divisor;
+        quotient++;
+    }
+    cout << quotient;
+    return 0;
+    }
+    if(dividend < 0 && divisor > 0){
+        dividend = -dividend;
+        while (sum + divisor <= dividend){
+        sum += divisor;
+        quotient++;
+    }
+    cout << "-" << quotient;
+    return 0;
+    }
+    if(dividend > 0 && divisor < 0){
+        divisor = -divisor;
+        while (sum + divisor <= dividend){
+        sum += divisor;
+        quotient++;
+    }
+    cout << "-" << quotient;
+    return 0;
+    }
+    if(dividend < 0 && divisor < 0){
+        dividend = - dividend;
+        divisor = - divisor;
+      while (sum + divisor <= dividend){
+        sum += divisor;
+        quotient++;
+    }
+    cout << quotient;
+    return 0;  
+    }
+    return 0;
+}
