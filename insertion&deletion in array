@@ -2,8 +2,7 @@
 
 int main() {
     int n, i, ele, pos, p;
-    
-    // Allocate a fixed size (e.g., 100) to safely allow array expansion during insertion
+
     int a[100]; 
 
     printf("Enter number of elements in array: ");
@@ -19,7 +18,6 @@ int main() {
         printf("%d ", a[i]);
     }
 
-    // --- INSERTION PROCESS ---
     printf("\n\nEnter element to insert: ");
     scanf("%d", &ele);
     printf("Enter position to insert (1 to %d): ", n + 1);
@@ -29,11 +27,11 @@ int main() {
         printf("Invalid Position for Insertion!\n");
     }
     else {
-        // Shift elements to the right
+ 
         for(i = n - 1; i >= pos - 1; i--){
             a[i + 1] = a[i];
         }
-        // Insert element and increment array size ONCE outside the loop
+
         a[pos - 1] = ele;
         n++;
 
@@ -44,20 +42,17 @@ int main() {
         printf("\n");
     }
 
-    // --- DELETION PROCESS ---
     printf("\nEnter position of element to delete (1 to %d): ", n);
     scanf("%d", &p);
 
-    // Validate using the deletion position variable 'p'
     if(p < 1 || p > n){
         printf("Invalid Position for Deletion!\n");
     }
     else {
-        // Shift elements to the left to overwrite the deleted item
+
         for(i = p - 1; i < n - 1; i++){
             a[i] = a[i + 1];
         }
-        // Decrement array size ONCE outside the loop
         n--;
 
         printf("Array after deletion: ");
